@@ -1,0 +1,259 @@
+sources:
+  - name: main
+    tables:
+      - name: bike_data
+        columns:
+          - name: tripduration
+            data_type: varchar
+          - name: starttime
+            data_type: varchar
+          - name: stoptime
+            data_type: varchar
+          - name: start station id
+            data_type: varchar
+          - name: start station name
+            data_type: varchar
+          - name: start station latitude
+            data_type: varchar
+          - name: start station longitude
+            data_type: varchar
+          - name: end station id
+            data_type: varchar
+          - name: end station name
+            data_type: varchar
+          - name: end station latitude
+            data_type: varchar
+          - name: end station longitude
+            data_type: varchar
+          - name: bikeid
+            data_type: varchar
+          - name: usertype
+            data_type: varchar
+          - name: birth year
+            data_type: varchar
+          - name: gender
+            data_type: varchar
+          - name: ride_id
+            data_type: varchar
+          - name: rideable_type
+            data_type: varchar
+          - name: started_at
+            data_type: varchar
+          - name: ended_at
+            data_type: varchar
+          - name: start_station_name
+            data_type: varchar
+          - name: start_station_id
+            data_type: varchar
+          - name: end_station_name
+            data_type: varchar
+          - name: end_station_id
+            data_type: varchar
+          - name: start_lat
+            data_type: varchar
+          - name: start_lng
+            data_type: varchar
+          - name: end_lat
+            data_type: varchar
+          - name: end_lng
+            data_type: varchar
+          - name: member_casual
+            data_type: varchar
+          - name: filename
+            data_type: varchar
+
+      - name: central_park_weather
+        columns:
+          - name: station
+            data_type: varchar
+          - name: name
+            data_type: varchar
+          - name: date
+            data_type: varchar
+          - name: awnd
+            data_type: varchar
+          - name: prcp
+            data_type: varchar
+          - name: snow
+            data_type: varchar
+          - name: snwd
+            data_type: varchar
+          - name: tmax
+            data_type: varchar
+          - name: tmin
+            data_type: varchar
+          - name: filename
+            data_type: varchar
+
+      - name: fhv_bases
+        columns:
+          - name: base_number
+            data_type: varchar
+          - name: base_name
+            data_type: varchar
+          - name: dba
+            data_type: varchar
+          - name: dba_category
+            data_type: varchar
+          - name: filename
+            data_type: varchar
+
+      - name: fhv_tripdata
+        columns:
+          - name: dispatching_base_num
+            data_type: varchar
+          - name: pickup_datetime
+            data_type: timestamp
+          - name: dropoff_datetime
+            data_type: timestamp
+          - name: pulocationid
+            data_type: double
+          - name: dolocationid
+            data_type: double
+          - name: sr_flag
+            data_type: integer
+          - name: affiliated_base_number
+            data_type: varchar
+          - name: filename
+            data_type: varchar
+
+      - name: fhvhv_tripdata
+        columns:
+          - name: hvfhs_license_num
+            data_type: varchar
+          - name: dispatching_base_num
+            data_type: varchar
+          - name: originating_base_num
+            data_type: varchar
+          - name: request_datetime
+            data_type: timestamp
+          - name: on_scene_datetime
+            data_type: timestamp
+          - name: pickup_datetime
+            data_type: timestamp
+          - name: dropoff_datetime
+            data_type: timestamp
+          - name: pulocationid
+            data_type: bigint
+          - name: dolocationid
+            data_type: bigint
+          - name: trip_miles
+            data_type: double
+          - name: trip_time
+            data_type: bigint
+          - name: base_passenger_fare
+            data_type: double
+          - name: tolls
+            data_type: double
+          - name: bcf
+            data_type: double
+          - name: sales_tax
+            data_type: double
+          - name: congestion_surcharge
+            data_type: double
+          - name: airport_fee
+            data_type: double
+          - name: tips
+            data_type: double
+          - name: driver_pay
+            data_type: double
+          - name: shared_request_flag
+            data_type: varchar
+          - name: shared_match_flag
+            data_type: varchar
+          - name: access_a_ride_flag
+            data_type: varchar
+          - name: wav_request_flag
+            data_type: varchar
+          - name: wav_match_flag
+            data_type: varchar
+          - name: filename
+            data_type: varchar
+
+      - name: green_tripdata
+        columns:
+          - name: vendorid
+            data_type: bigint
+          - name: lpep_pickup_datetime
+            data_type: timestamp
+          - name: lpep_dropoff_datetime
+            data_type: timestamp
+          - name: store_and_fwd_flag
+            data_type: varchar
+          - name: ratecodeid
+            data_type: double
+          - name: pulocationid
+            data_type: bigint
+          - name: dolocationid
+            data_type: bigint
+          - name: passenger_count
+            data_type: double
+          - name: trip_distance
+            data_type: double
+          - name: fare_amount
+            data_type: double
+          - name: extra
+            data_type: double
+          - name: mta_tax
+            data_type: double
+          - name: tip_amount
+            data_type: double
+          - name: tolls_amount
+            data_type: double
+          - name: ehail_fee
+            data_type: integer
+          - name: improvement_surcharge
+            data_type: double
+          - name: total_amount
+            data_type: double
+          - name: payment_type
+            data_type: double
+          - name: trip_type
+            data_type: double
+          - name: congestion_surcharge
+            data_type: double
+          - name: filename
+            data_type: varchar
+
+      - name: yellow_tripdata
+        columns:
+          - name: vendorid
+            data_type: bigint
+          - name: tpep_pickup_datetime
+            data_type: timestamp
+          - name: tpep_dropoff_datetime
+            data_type: timestamp
+          - name: passenger_count
+            data_type: double
+          - name: trip_distance
+            data_type: double
+          - name: ratecodeid
+            data_type: double
+          - name: store_and_fwd_flag
+            data_type: varchar
+          - name: pulocationid
+            data_type: bigint
+          - name: dolocationid
+            data_type: bigint
+          - name: payment_type
+            data_type: bigint
+          - name: fare_amount
+            data_type: double
+          - name: extra
+            data_type: double
+          - name: mta_tax
+            data_type: double
+          - name: tip_amount
+            data_type: double
+          - name: tolls_amount
+            data_type: double
+          - name: improvement_surcharge
+            data_type: double
+          - name: total_amount
+            data_type: double
+          - name: congestion_surcharge
+            data_type: double
+          - name: airport_fee
+            data_type: double
+          - name: filename
+            data_type: varchar

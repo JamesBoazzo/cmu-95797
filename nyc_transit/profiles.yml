@@ -1,0 +1,13 @@
+
+default:
+  outputs:
+    dev:
+      type: duckdb
+      path: 'C:/Users/Jdboazzo/cmu-95797/nyc_transit.db'
+  target: dev
+
+
+  
+
+     
+
