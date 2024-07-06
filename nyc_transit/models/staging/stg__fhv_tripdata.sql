@@ -1,7 +1,6 @@
 
-  
-  create view "nyc_transit"."main_staging"."stg__fhv_tripdata__dbt_tmp" as (
-    -- models/staging/stg__fhv_tripdata.sql
+
+-- models/staging/stg__fhv_tripdata.sql
 -- This model cleans and renames columns from the source table 'fhv_tripdata'
 -- It also eliminates the 'SR_Flag' column due to nulls throughout.
 --assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
@@ -45,4 +44,3 @@ renamed as (
 
 -- Select all cleaned and renamed columns for the final output
 select * from renamed
-  );

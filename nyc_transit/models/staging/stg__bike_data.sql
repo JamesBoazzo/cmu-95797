@@ -1,10 +1,9 @@
 
-  
-  create view "nyc_transit"."main_staging"."stg__bike_data__dbt_tmp" as (
-    -- models/staging/stg__bike_data.sql
---assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
+-- models/staging/stg__bik_data.sql
+-- assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
 -- Define the DBT model for cleaning and renaming columns
---Possible duplicates but didn't remove as they do not appear to be PK per instructions.  Ride_id is the most likely candidate for PK.
+-- Uniform schema by merging appropriate columns (start_station_id, start_station_name, end_station_id, and end_station_name)
+
 with source as (
     -- Select all data from the source table 'bike_data' in the 'main' schema
     select * from "nyc_transit"."main"."bike_data"
@@ -14,8 +13,8 @@ renamed as (
     -- Clean and rename columns
     select 
         -- Ensure 'tripduration' is a string and trim whitespace
-		-- Numerous instances of very high values (e.g. >100,000); however, I opted to keep them as is b/c data is in seconds and may indicate long term rentals.  
-		-- Also, I will perform querying on these cleaned values later.
+        -- Numerous instances of very high values (e.g. >100,000); however, I opted to keep them as is b/c data is in seconds and may indicate long term rentals.  
+        -- Also, I will perform querying on these cleaned values later.
         try_cast(trim(tripduration) as varchar) as trip_duration,
 
         -- Ensure 'starttime' is a timestamp
@@ -25,10 +24,10 @@ renamed as (
         try_cast(stoptime as timestamp) as stop_time,
 
         -- Ensure 'start station id' is a string and trim whitespace
-        try_cast(trim("start station id") as varchar) as start_station_id,
+        coalesce(trim("start station id"), trim(start_station_id)) as start_station_id,
 
         -- Ensure 'start station name' is a string and trim whitespace
-        try_cast(trim("start station name") as varchar) as start_station_name,
+        coalesce(trim("start station name"), trim(start_station_name)) as start_station_name,
 
         -- Ensure 'start station latitude' is a double
         try_cast("start station latitude" as double) as start_station_latitude,
@@ -37,10 +36,10 @@ renamed as (
         try_cast("start station longitude" as double) as start_station_longitude,
 
         -- Ensure 'end station id' is a string and trim whitespace
-        try_cast(trim("end station id") as varchar) as end_station_id,
+        coalesce(trim("end station id"), trim(end_station_id)) as end_station_id,
 
         -- Ensure 'end station name' is a string and trim whitespace
-        try_cast(trim("end station name") as varchar) as end_station_name,
+        coalesce(trim("end station name"), trim(end_station_name)) as end_station_name,
 
         -- Ensure 'end station latitude' is a double
         try_cast("end station latitude" as double) as end_station_latitude,
@@ -62,7 +61,7 @@ renamed as (
             when trim(gender) = '0' then 'unknown'
             when trim(gender) = '1' then 'male'
             when trim(gender) = '2' then 'female'
-            else 'Other'
+            else 'other'
         end as gender,
 
         -- Ensure 'ride_id' is a string and trim whitespace
@@ -81,19 +80,7 @@ renamed as (
         cast(trim(ended_at) as date) as ended_at_date,
         cast(trim(ended_at) as time) as ended_at_time,
 
-        -- Ensure 'start_station_name' is a string and trim whitespace
-        try_cast(trim(start_station_name) as varchar) as start_station_name,
-
-        -- Ensure 'start_station_id' is a string and trim whitespace
-        try_cast(trim(start_station_id) as varchar) as start_station_id,
-
-        -- Ensure 'end_station_name' is a string and trim whitespace
-        try_cast(trim(end_station_name) as varchar) as end_station_name,
-
-        -- Ensure 'end_station_id' is a string and trim whitespace
-        try_cast(trim(end_station_id) as varchar) as end_station_id,
-
-        -- Ensure 'start_lat' is a double.  
+        -- Ensure 'start_lat' is a double
         try_cast(start_lat as double) as start_latitude,
 
         -- Ensure 'start_lng' is a double
@@ -113,6 +100,5 @@ renamed as (
     from source
 )
 
--- Select all cleaned and renamed columns for the final output
 select * from renamed
-  );
+

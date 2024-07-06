@@ -1,7 +1,7 @@
 
   
-  create view "nyc_transit"."main_staging"."stg__fhv_bases__dbt_tmp" as (
-    -- models/staging/stg__fhv_bases.sql
+ 
+-- models/staging/stg__fhv_bases.sql
 -- This model cleans and renames columns from the source table 'fhv_bases'
 -- It also replaces blank cells in the 'dba' column with 'Unknown'
 --assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
@@ -32,4 +32,3 @@ renamed as (
 
 -- Select all cleaned and renamed columns for the final output
 select * from renamed
-  );

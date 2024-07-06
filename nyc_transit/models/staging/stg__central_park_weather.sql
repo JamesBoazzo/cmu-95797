@@ -1,7 +1,5 @@
 
-  
-  create view "nyc_transit"."main_staging"."stg__central_park_weather__dbt_tmp" as (
-    -- models/staging/stg__central_park_weather_data.sql
+-- models/staging/stg__central_park_weather_data.sql
 --assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
 with source as (
     -- Select all data from the source table 'central_park_weather' in the 'main' schema
@@ -45,4 +43,3 @@ renamed as (
 
 -- Select all cleaned and renamed columns for the final output
 select * from renamed
-  );

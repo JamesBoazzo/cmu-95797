@@ -1,7 +1,5 @@
 
-  
-  create view "nyc_transit"."main_staging"."stg__yellow_tripdata__dbt_tmp" as (
-    -- models/staging/stg__yellow_tripdata.sql
+-- models/staging/stg__yellow_tripdata.sql
 -- This model cleans and renames columns from the source table 'yellow_tripdata'
 -- It also eliminates irrelevant columns 'airport_fee' and handles NULL values appropriately.
 --assistance from https://stackoverflow.com/questions/tagged/sql to build sql code
@@ -82,4 +80,3 @@ renamed as (
 
 -- Select all cleaned and renamed columns for the final output
 select * from renamed
-  );
