@@ -1,6 +1,7 @@
 -- inter_borough_taxi_trips_by_weekday.sql
 -- This query calculates the count of total taxi trips, trips starting and ending in different boroughs,
 -- and the percentage of such trips by weekday.
+-- Ensured the use of CTE (specifically inter-borough trips below) as instructed in HW.
 
 -- Extract relevant fields from the fact table and add the weekday
 with taxi_trips as (
@@ -39,6 +40,7 @@ trips_with_boroughs as (
 ),
 
 -- Calculate total trips and inter-borough trips by weekday
+-- Ensured to use this as CTE 
 inter_borough_trips as (
     select
         weekday,
@@ -52,6 +54,7 @@ inter_borough_trips as (
 -- Calculate the percentage of inter-borough trips and order by weekday
 select
     -- Convert numeric weekday values to their respective day names
+	-- References inter-borough CTE above
     case
         when weekday = 0 then 'Sunday'
         when weekday = 1 then 'Monday'

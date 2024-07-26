@@ -1,0 +1,69 @@
+Zone,num_trips
+Rikers Island,18
+Governor's Island/Ellis Island/Liberty Island,44
+Great Kills Park,147
+Jamaica Bay,229
+Freshkills Park,1795
+Astoria Park,3037
+Broad Channel,3286
+Green-Wood Cemetery,4078
+Willets Point,4569
+Breezy Point/Fort Tilden/Riis Beach,7537
+Marine Park/Floyd Bennett Field,8352
+Highbridge Park,10446
+Battery Park,11279
+Crotona Park,13484
+Forest Park/Highland Park,14054
+Rossville/Woodrow,14146
+Arden Heights,16481
+Randalls Island,16575
+City Island,16654
+Pelham Bay Park,19119
+Oakwood,20505
+Country Club,20776
+Inwood Hill Park,21369
+Charleston/Tottenville,22848
+Saint Michaels Cemetery/Woodside,23828
+Eltingville/Annadale/Prince's Bay,23927
+Douglaston,32380
+New Dorp/Midland Beach,34609
+Great Kills,35419
+Columbia Street,35553
+Arrochar/Fort Wadsworth,35970
+Rockaway Park,38323
+Bronx Park,39444
+Oakland Gardens,41424
+Port Richmond,42468
+Glen Oaks,43184
+Roosevelt Island,44080
+Bellerose,44391
+Bay Terrace/Fort Totten,44913
+Westerleigh,45221
+Van Cortlandt Park,47034
+Flushing Meadows-Corona Park,47918
+West Brighton,48713
+Prospect Park,50755
+South Beach/Dongan Hills,51782
+Auburndale,53720
+Fresh Meadows,57434
+Brooklyn Navy Yard,59029
+Grymes Hill/Clifton,61874
+Heartland Village/Todt Hill,63636
+Cambria Heights,67310
+East Flushing,68343
+Ocean Parkway South,73893
+Mariners Harbor,75251
+Hollis,76418
+Bath Beach,76496
+Marble Hill,77507
+Manhattan Beach,78243
+Queensboro Hill,83310
+Howard Beach,83702
+Whitestone,83860
+Pelham Bay,87434
+Cobble Hill,91024
+Bloomfield/Emerson Hill,91246
+College Point,92291
+Rosedale,96469
+Starrett City,98233
+Windsor Terrace,98982

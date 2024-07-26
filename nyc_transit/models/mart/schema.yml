@@ -109,3 +109,16 @@ models:
 
       - name: duration_sec
         description: ""
+        
+        
+  - name: mart__fact_trips_by_borough
+    description: "Aggregated trips data grouped by borough"
+    columns:
+      - name: borough
+        description: "The borough where the trip originated"
+      - name: num_trips
+        description: "The number of trips originating from the borough"
+      - name: avg_duration_min
+        description: "The average duration of trips originating from the borough, in minutes"
+      - name: avg_duration_sec
+        description: "The average duration of trips originating from the borough, in seconds"

@@ -7,3 +7,4 @@
     else false  -- or true, depending on your default preference
 end)::bool
 {%- endmacro %}
+

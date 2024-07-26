@@ -1,0 +1,3 @@
+day_type,avg_bike_trips
+precip_or_snow,5503.582089552238
+preceding,6301.254807692308
